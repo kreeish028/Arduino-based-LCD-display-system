@@ -43,8 +43,27 @@ The Arduino processes the programmed instructions and sends the required data to
 * Low-cost components  
 * Easy Arduino-LCD interfacing  
 * Suitable for beginner electronics projects
+program
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+
+  lcd.setCursor(0, 0);
+  lcd.print("Hello!");
+
+  lcd.setCursor(0, 1);
+  lcd.print("Arduino LCD");
+}
+
+void loop() {
+}
 ## **Conclusion**
 
 The Arduino-Based LCD Display System provides a basic understanding of **microcontroller programming and LCD interfacing**. It can be further developed into various smart monitoring and display application
+<img width="1600" height="900" alt="result" src="https://github.com/user-attachments/assets/8d5a516e-03a1-4055-a4fa-fc2f0a976afa" />
 
